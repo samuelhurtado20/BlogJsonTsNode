@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const ArticleController_1 = require("../controllers/ArticleController");
+const ArticlesRoutes = express_1.Router();
+ArticlesRoutes.get("/", ArticleController_1.articleController.Index);
+ArticlesRoutes.get("/add", ArticleController_1.articleController.Add);
+ArticlesRoutes.post("/save", ArticleController_1.articleController.Save);
+ArticlesRoutes.get("/edit/:id", ArticleController_1.articleController.Edit);
+ArticlesRoutes.post("/update", ArticleController_1.articleController.Update);
+ArticlesRoutes.get("/:id", ArticleController_1.articleController.Single);
+exports.default = ArticlesRoutes;
